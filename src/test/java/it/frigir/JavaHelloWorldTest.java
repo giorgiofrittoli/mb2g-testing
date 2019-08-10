@@ -1,12 +1,17 @@
 package it.frigir;
 
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class JavaHelloWorldTest {
 
-    public void testGetHello(){
+    @Test
+    public void getHello() {
+
         JavaHelloWorld javaHelloWorld = new JavaHelloWorld();
 
-        assert("Hello World".equals(javaHelloWorld.getHello()));
+        assertEquals("Hello World",javaHelloWorld.getHello());
     }
-
 }
