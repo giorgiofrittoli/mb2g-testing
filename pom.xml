@@ -17,6 +17,7 @@
         <junit.version>5.5.1</junit.version>
         <skipTests>false</skipTests>
         <skipITs>false</skipITs>
+        <project.scm.id>github</project.scm.id>
     </properties>
 
     <dependencies>
@@ -167,6 +168,11 @@
         </extensions>
     </build>
 
+    <scm>
+        <developerConnection>scm:git:https://github.com/giorgiofrittoli/mb2g-testing.git</developerConnection>
+        <url>https://github.com/giorgiofrittoli/mb2g-testing</url>
+    </scm>
+
     <reporting>
         <plugins>
             <plugin>
@@ -178,6 +184,11 @@
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
                 <version>3.1.12</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
             </plugin>
         </plugins>
     </reporting>
