@@ -14,7 +14,35 @@
         <java.version>12</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+        <TEST_HOST>LOCAL_HOST</TEST_HOST>
     </properties>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M3</version>
+                <configuration>
+                    <environmentVariables>${TEST_HOST}</environmentVariables>
+                </configuration>
+            </plugin>
+        </plugins>
 
+    </build>
+
+    <profiles>
+        <profile>
+            <id>test</id>
+            <properties>
+                <TEST_HOST>TEST_PROFILE</TEST_HOST>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <TEST_HOST>PROD_FILE</TEST_HOST>
+            </properties>
+        </profile>
+    </profiles>
 </project>
